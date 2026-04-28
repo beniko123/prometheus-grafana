@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /nfs/k8s/prometheus
+    server: 172.31.40.193
+  persistentVolumeReclaimPolicy: Retain
